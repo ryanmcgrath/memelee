@@ -23,7 +23,7 @@ const hydrate = create({
 
 const stores = {
     Tournaments: TournamentsListingStore,
-    TournamentEventStore: TournamentEventStore,
+    Events: TournamentEventStore,
     Bookmarks: BookmarksStore,
     Settings: SettingsStore
 };

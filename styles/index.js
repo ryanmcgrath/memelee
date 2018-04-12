@@ -108,6 +108,19 @@ const stylesheet = StyleSheet.create({
         flex: 1,
         backgroundColor: iconColor,
         padding: 10,
+    },
+
+    eventsErrorTextHeader: {
+        textAlign: 'center',
+        color: textColor,
+        fontWeight: 'bold',
+        fontSize: 16
+    },
+
+    eventsErrorText: {
+        textAlign: 'center',
+        marginTop: 5,
+        color: textColor
     }
 });
 

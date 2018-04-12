@@ -37,8 +37,7 @@ export default class TournamentRow extends React.Component {
                         <Icon name="map-marker" size={16} color={styles.tournamentPromoIconColors.mapMarker} /> {this.props.tournament.hasOnlineEvents && (!this.props.tournament.city || this.props.tournament.city === '') ? 'Online' : (this.props.tournament.city ? this.props.tournament.city + ', ' : '') + this.props.tournament.addrState}</Text>
                     <View style={{flexDirection: 'row'}}>
                         <Text style={styles.tournamentRowEventsCount}>
-                            <Icon name="trophy-variant" size={16} color={styles.tournamentPromoIconColors.eventsCount} /> 
-                            {this.props.tournament.memeleeEventsCount} Events
+                            <Icon name="trophy-variant" size={16} color={styles.tournamentPromoIconColors.eventsCount} /> {this.props.tournament.memeleeEventsCount} Events
                         </Text>
                         <Text style={[styles.tournamentRowEventsCount, {marginLeft: 10}]}>
                             <Icon name="human-greeting" size={16} color={styles.tournamentPromoIconColors.attendeesCount} /> {this.props.tournament.attendeeCount} Attendees

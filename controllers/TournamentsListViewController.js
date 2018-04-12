@@ -13,6 +13,7 @@ import {inject, observer} from 'mobx-react/native';
 import {SearchBar} from 'react-native-elements';
 
 import styles from '../styles';
+import Constants from '../utils/Constants';
 import MemeleeViewController from './MemeleeViewController';
 import TournamentRow from './components/TournamentRow';
 
@@ -26,7 +27,7 @@ export default class UpcomingTournamentsViewController extends MemeleeViewContro
     
     onTap = (tournament) => {
         this.props.navigator.push({
-            screen: 'memelee.tournamentInfoScreen',
+            screen: Constants.Screens.TournamentInfoScreen,
             title: tournament.name,
             passProps: {tournament: tournament},
             navigatorStyle: {tabBarHidden: true}

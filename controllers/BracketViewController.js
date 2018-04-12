@@ -9,9 +9,8 @@
 import moment from 'moment';
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
-import {v4} from 'uuid';
+import {inject, observer} from 'mobx-react/native';
 
-//import SmashGG from '../store';
 import MemeleeViewController from './MemeleeViewController';
 
 const Match = ({set, ...rest}) => (
@@ -22,32 +21,17 @@ const Match = ({set, ...rest}) => (
     </View>
 );
 
+@inject('Events') @observer
 export default class BracketViewController extends MemeleeViewController {
-    state = {
-        brackets: {
-            winners: [],
-            losers: [],
-            grandFinals: []
-        }
-    };
-
     componentWillMount() {
-        const evtSlugs = this.props.evt.slug.split('/');
-        const evtSlug = evtSlugs.length > 0 ? evtSlugs[evtSlugs.length - 1] : null;
-        const tournamentSlug = this.props.tournament.slugs[0].replace('tournament/', '');
- 
-        SmashGG.fetchBracketData(tournamentSlug, evtSlug, this.props.bracket.id).then(this.updateBracketsData).catch(console.error);
+        this.props.Events.fetchBracketData(this.props.bracket.id);
     }
-
-    updateBracketsData = (brackets) => {
-        this.setState({brackets: brackets});
-    }
-    
+   
     render() {
         return (<ScrollView style={{flex: 1, backgroundColor: '#21212d'}} contentContainerStyle={{width: 10001}}>
             {['winners', 'losers'].map(key => (
                 <View key={key} style={{backgroundColor: '#21212d', flexDirection: 'row', paddingTop: 20, paddingBottom: 20, paddingLeft: 20}}>
-                    {this.state.brackets[key].map(bracket => (
+                    {this.props.Events.bracketData[key].map(bracket => (
                         <View key={bracket.key} style={{backgroundColor: '#21212d', marginRight: 20, width: 200, flexDirection: 'column'}}>
                             <Text>{bracket.title}</Text>
                             {bracket.sets.map(set => <Match key={set.id} set={set} />)}
