@@ -43,3 +43,4 @@ I guess the only restriction would be that if you use this, just throw some cred
 ![Screenshot 5](https://rymc.io/smashgg/5.png =250x)
 ![Screenshot 6](https://rymc.io/smashgg/6.png =250x)
 ![Screenshot 7](https://rymc.io/smashgg/7.png =250x)
+<img src="https://rymc.io/smashgg/7.png" width="250">
