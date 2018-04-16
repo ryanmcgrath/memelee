@@ -36,10 +36,10 @@ I guess the only restriction would be that if you use this, just throw some cred
 - [Email: ryan@rymc.io](mailto:ryan@rymc.io)
 
 ### Screenshots
-![Screenshot 1](https://rymc.io/smashgg/1.png)
-![Screenshot 2](https://rymc.io/smashgg/2.png)
-![Screenshot 3](https://rymc.io/smashgg/3.png)
-![Screenshot 4](https://rymc.io/smashgg/4.png)
-![Screenshot 5](https://rymc.io/smashgg/5.png)
-![Screenshot 6](https://rymc.io/smashgg/6.png)
-![Screenshot 7](https://rymc.io/smashgg/7.png)
+![Screenshot 1](https://rymc.io/smashgg/1.png =250x)
+![Screenshot 2](https://rymc.io/smashgg/2.png =250x)
+![Screenshot 3](https://rymc.io/smashgg/3.png =250x)
+![Screenshot 4](https://rymc.io/smashgg/4.png =250x)
+![Screenshot 5](https://rymc.io/smashgg/5.png =250x)
+![Screenshot 6](https://rymc.io/smashgg/6.png =250x)
+![Screenshot 7](https://rymc.io/smashgg/7.png =250x)
