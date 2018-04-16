@@ -36,8 +36,8 @@ I guess the only restriction would be that if you use this, just throw some cred
 - [Email: ryan@rymc.io](mailto:ryan@rymc.io)
 
 ### Screenshots
-![Screenshot 1](https://rymc.io/smashgg/1.png =250x)
-![Screenshot 2](https://rymc.io/smashgg/2.png =250x)
+![Screenshot 1](https://rymc.io/smashgg/1.png =250x250)
+![Screenshot 2](https://rymc.io/smashgg/2.png | width=100)
 ![Screenshot 3](https://rymc.io/smashgg/3.png =250x)
 ![Screenshot 4](https://rymc.io/smashgg/4.png =250x)
 ![Screenshot 5](https://rymc.io/smashgg/5.png =250x)
