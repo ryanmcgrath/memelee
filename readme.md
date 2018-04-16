@@ -1,5 +1,5 @@
 # A Smash.gg (Completely Unofficial) App
-Welcome! If you've hit this repository, you were probably looking for a Smash.gg app, frustrated that one doesn't exist. I know the feeling - it's why I originally looked into building this!
+Welcome! If you've hit this repository, you were probably looking for a Smash.gg app, frustrated that one doesn't exist. I know the feeling - it's why I originally looked into building this. Ever tried to view the bracket and watch a match at the same time? A mobile browser = no fun for this.
 
 Ultimately, this repo represents a product I chose not to move forward with further development on. The reasoning boils down to:
 
