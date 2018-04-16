@@ -36,7 +36,7 @@ I guess the only restriction would be that if you use this, just throw some cred
 - [Email: ryan@rymc.io](mailto:ryan@rymc.io)
 
 ### Screenshots
-<img src="https://rymc.io/smashgg/1.png" width="250"><img src="https://rymc.io/smashgg/2.png" width="250">
-<img src="https://rymc.io/smashgg/3.png" width="250"><img src="https://rymc.io/smashgg/4.png" width="250">
-<img src="https://rymc.io/smashgg/5.png" width="250"><img src="https://rymc.io/smashgg/6.png" width="250">
+<img src="https://rymc.io/smashgg/1.png" width="250"> <img src="https://rymc.io/smashgg/2.png" width="250">
+<img src="https://rymc.io/smashgg/3.png" width="250"> <img src="https://rymc.io/smashgg/4.png" width="250">
+<img src="https://rymc.io/smashgg/5.png" width="250"> <img src="https://rymc.io/smashgg/6.png" width="250">
 <img src="https://rymc.io/smashgg/7.png" width="250">
