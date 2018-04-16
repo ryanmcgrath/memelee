@@ -7,7 +7,7 @@ Ultimately, this repo represents a product I chose not to move forward with furt
 - Being that the Smash.gg API is pretty unofficial, it's also not particularly well documented. This isn't their fault or anything, as they're pretty clear about this fact, so it's not meant as a dig at them! I just know I spent a few afternoons piecing together how the various API calls work together (e.g, fetching featured tournaments, searching, brackets/phases/etc).
 
 ### What the hell is a Memelee?
-My little brother and I play Melee a lot, by which I mean... I've been playing the game since it came out, this kid's been playing for a year, and he nowadays beats my ass every time.  Memelee (meme, pronounced may-m for some reason, lay) is a name we jokingly call our netplay sets since they usually turn into contests of who can do the dumbest combos to the other.
+[My little brother (@notjamss)](https://twitter.com/notjamss) and I play Melee a lot, by which I mean... I've been playing the game since it came out, this kid's been playing for a year, and he nowadays beats my ass every time.  Memelee (meme, pronounced may-m for some reason, lay) is a name we jokingly call our netplay sets since they usually turn into contests of who can do the dumbest combos to the other.
 
 |   |   |
 | --- | -------- |
