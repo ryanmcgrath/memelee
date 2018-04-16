@@ -139,6 +139,10 @@ class Store {
      *
      *  @arg bracketID {String or Number} ID for the bracket - SmashGG calls this a phase. Go fig.
      */
+
+//https://smash.gg/api/-/gg_api./tournament/fighter-s-spirit-2018-1;eventSlug=street-fighter-v-arcade-edition-singles;expand=["event","phase","wave","station","stream","entrantCounts","tagsByEntity","ruleset"];mutations=["playerData","profileTaskNotifs"];phaseId=246410;reset=false;slug=fighter-s-spirit-2018-1?returnMeta=true
+
+
     fetchBracketData = (bracketID) => {
         this.bracketData = {winners: [], losers: []};
         this.bracketID = bracketID;
@@ -157,10 +161,15 @@ class Store {
         };
         
         const url = api + Object.keys(args).map(key => `${key}=${args[key]}`).join(';') + '?returnMeta=true'
-        console.log(url);
+        //console.log(url);
         fetch(
             url
         ).then(response => response.json()).then(data => {
+            if(data.items.resultEntity && data.items.resultEntity === 'groups' && typeof data.items.entities.sets === 'undefined') {
+                this.parseAndStoreGroups(data);
+                return;
+            }
+
             const grands = [];
             const brackets = {
                 winners: [],
@@ -176,13 +185,14 @@ class Store {
                 result.entrant1 = {};
                 result.entrant2 = {};
 
-                data.items.entities.entrants.forEach(function(entrant) {
-                    if(entrant.id === result.entrant1Id)
-                        result.entrant1 = entrant;
+                if(data.items.entities.entrants)
+                    data.items.entities.entrants.forEach(function(entrant) {
+                        if(entrant.id === result.entrant1Id)
+                            result.entrant1 = entrant;
                     
-                    if(entrant.id === result.entrant2Id)
-                        result.entrant2 = entrant;
-                });
+                        if(entrant.id === result.entrant2Id)
+                            result.entrant2 = entrant;
+                    });
 
                 if(result.isGF) {
                     grands.push(result);
@@ -208,18 +218,23 @@ class Store {
             // GFs are technically in the winners bracket, but for presentation purposes they're shoved
             // in after to be like how smash.gg presents them.
             if(grands.length > 0) {
-                grands.forEach(grandFinal => {
-                    brackets.winners.push({
-                        title: 'Grand Finals',
-                        sets: [grandFinal],
-                        key: v4()
-                    });
-                });
+                grands.forEach(grandFinal => brackets.winners.push({
+                    title: 'Grand Finals',
+                    sets: [grandFinal],
+                    key: v4()
+                }));
             }
 
             runInAction('Set Bracket Data', () => {
                 this.bracketData = brackets;
             });
+        });
+    }
+
+    parseAndStoreGroups = (data) => {
+        console.warn('Groups!');
+        runInAction('Set Groups Data', () => {
+
         });
     }
 };

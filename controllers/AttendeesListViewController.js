@@ -9,6 +9,7 @@
 import moment from 'moment';
 import React from 'react';
 import {FlatList, View, ActivityIndicator} from 'react-native';
+import SegmentedControlTab from 'react-native-segmented-control-tab';
 import {inject, observer} from 'mobx-react/native';
 import {SearchBar} from 'react-native-elements';
 
@@ -20,6 +21,14 @@ import TournamentRow from './components/TournamentRow';
 const keyExtractor = (item, index) => item.id;
 
 export default class AttendeesListViewController extends MemeleeViewController {
+    state = {
+        selectedIndex: 0
+    };
+
+    swapIndex = (index) => this.setState({
+        selectedIndex: index
+    });
+
     renderItem = ({item}) => (<View />)
 
     render() {
@@ -28,7 +37,20 @@ export default class AttendeesListViewController extends MemeleeViewController {
             keyExtractor: keyExtractor,
             renderItem: this.renderItem
         };
+        
+        const segmentedProps = {
+            values: ['Players', 'Teams'],
+            borderRadius: 0,
+            activeTabStyle: styles.tournamentInfoActiveTableStyle,
+            tabStyle: styles.tournamentInfoTabsStyle,
+            tabTextStyle: styles.tournamentInfoTabTextStyle,
+            selectedIndex: this.state.selectedIndex,
+            onTabPress: this.swapIndex
+        };
 
-        return <FlatList {...props} renderItem={this.renderItem} />
+        return (<View>
+            <SegmentedControlTab {...segmentedProps} />
+            <FlatList {...props} />
+        </View>);
     }
 }

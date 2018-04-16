@@ -11,13 +11,21 @@ import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import {inject, observer} from 'mobx-react/native';
 
+import styles from '../styles';
+
 import MemeleeViewController from './MemeleeViewController';
 
 const Match = ({set, ...rest}) => (
-    <View style={{backgroundColor: '#3b3b48', borderColor: '#0e0e12', borderWidth: 0.5, borderRadius: 4, marginBottom: 20}}>
-        <Text style={{padding: 5, color: '#dbdbde'}}>{set.entrant1.name ? set.entrant1.name : ''} <Text>{set.entrant1Score}</Text></Text>
-        <View style={{borderTopWidth: 0.5, borderTopColor: '#2a2a33'}} />
-        <Text style={{padding: 5, color: '#dbdbde'}}>{set.entrant2.name ? set.entrant2.name : ''} <Text>{set.entrant2Score}</Text></Text>
+    <View style={styles.matchWrapper}>
+        <View style={styles.matchEntrant}>
+            <Text style={styles.matchEntrantText}>{set.entrant1.name ? set.entrant1.name : ''}</Text>
+            <Text style={[{padding: 5, color: '#fff', borderTopRightRadius: 4}, set.entrant1.id === set.winnerId ? {backgroundColor: '#1bc382'} : {}]}>{set.entrant1Score}</Text>
+        </View>
+        <View style={styles.matchSeparator} />
+        <View style={styles.matchEntrant}>
+            <Text style={styles.matchEntrantText}>{set.entrant2.name ? set.entrant2.name : ''}</Text>
+            <Text style={[{padding: 5, color: '#fff', borderBottomRightRadius: 4}, set.entrant2.id === set.winnerId ? {backgroundColor: '#1bc382'} : {}]}>{set.entrant2Score}</Text>
+        </View>
     </View>
 );
 
@@ -33,8 +41,11 @@ export default class BracketViewController extends MemeleeViewController {
                 <View key={key} style={{backgroundColor: '#21212d', flexDirection: 'row', paddingTop: 20, paddingBottom: 20, paddingLeft: 20}}>
                     {this.props.Events.bracketData[key].map(bracket => (
                         <View key={bracket.key} style={{backgroundColor: '#21212d', marginRight: 20, width: 200, flexDirection: 'column'}}>
-                            <Text>{bracket.title}</Text>
-                            {bracket.sets.map(set => <Match key={set.id} set={set} />)}
+                            <Text style={styles.bracketTitle}>{bracket.title}</Text>
+                            {bracket.sets.map(set => {
+                                if(set.isGF) console.log(JSON.stringify(set, null, 4));
+                                return <Match key={set.id} set={set} />;
+                            })}
                         </View>
                     ))}
                 </View>

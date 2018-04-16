@@ -6,29 +6,54 @@
  *  @copyright Ryan McGrath 2018.
  */
 
-import moment from 'moment';
 import React from 'react';
-import {FlatList, View, ActivityIndicator} from 'react-native';
-import {inject, observer} from 'mobx-react/native';
-import {SearchBar} from 'react-native-elements';
+import {ScrollView, View, Text, StyleSheet} from 'react-native';
+import Markdown from 'react-native-markdown-renderer';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SettingsList, {Header, Item} from 'react-native-settings-list';
 
 import styles from '../styles';
-import Constants from '../utils/Constants';
+import {openURL} from '../utils';
 import MemeleeViewController from './MemeleeViewController';
-import TournamentRow from './components/TournamentRow';
 
-const keyExtractor = (item, index) => item.id;
-
-export default class AttendeesListViewController extends MemeleeViewController {
-    renderItem = ({item}) => (<View />)
+export default class ContactViewController extends MemeleeViewController {
+    email = () => { openURL('mailto:' + this.props.data.email); }
+    phone = () => { openURL('tel:' + this.props.data.phone); }
+    twitter = () => { openURL('https://twitter.com/' + this.props.data.twitter); }
 
     render() {
-        const props = {
-            data: this.props.data,
-            keyExtractor: keyExtractor,
-            renderItem: this.renderItem
+        const s = StyleSheet.flatten(styles.tournamentDetailsEventWrapper);
+        const ss = {
+            itemWidth: 50,
+            backgroundColor: s.backgroundColor,
+            style: styles.tournamentDetailsEventWrapper,
+            titleStyle: styles.tournamentDetailsEventItem
         };
 
-        return <FlatList {...props} renderItem={this.renderItem} />
+        return (<ScrollView>
+            <SettingsList>
+                {this.props.data.email ? <Item {...ss} title={this.props.data.email} onPress={this.email} icon={
+                    <View style={{height:30, marginLeft:10, alignSelf:'center'}}>
+                        <Icon name="email" size={26} color={styles.tournamentPromoIconColors.eventsCount} />
+                    </View>
+                } /> : null}
+                {this.props.data.phone ? <Item {...ss} title={this.props.data.phone} onPress={this.phone} icon={
+                    <View style={{height:30, marginLeft:10, alignSelf:'center'}}>
+                        <Icon name="phone" size={26} color={styles.tournamentPromoIconColors.eventsCount} />
+                    </View>                    
+                } /> : null}
+                {this.props.data.twitter ? <Item {...ss} title={this.props.data.twitter} onPress={this.twitter} icon={
+                    <View style={{height:30, marginLeft:10, alignSelf:'center'}}>
+                        <Icon name="twitter" size={26} color={styles.tournamentPromoIconColors.eventsCount} />
+                    </View>
+                } /> : null}
+            </SettingsList>
+
+            {this.props.data.info ? <View style={styles.tournamentDetailsTextWrapper}>
+                <Markdown style={styles.tournamentDetailsText}>
+                    {this.props.data.info}
+                </Markdown>
+            </View> : null}
+        </ScrollView>);
     }
 }

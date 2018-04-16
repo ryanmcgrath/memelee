@@ -121,6 +121,37 @@ const stylesheet = StyleSheet.create({
         textAlign: 'center',
         marginTop: 5,
         color: textColor
+    },
+
+    bracketTitle: {
+        fontWeight: 'bold',
+        padding: 5,
+        textAlign: 'center',
+        color: textColor
+    },
+
+    matchWrapper: {
+        backgroundColor: '#3b3b48',
+        borderColor: '#0e0e12',
+        borderWidth: 0.5,
+        borderRadius: 4,
+        marginBottom: 20,
+        overflow: 'hidden'
+    },
+
+    matchEntrant: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
+    matchEntrantText: {
+        color: '#dbdbde',
+        padding: 5
+    },
+
+    matchSeparator: {
+        borderTopWidth: 0.5,
+        borderTopColor: '#2a2a33'
     }
 });
 

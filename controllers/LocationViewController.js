@@ -6,29 +6,38 @@
  *  @copyright Ryan McGrath 2018.
  */
 
-import moment from 'moment';
 import React from 'react';
-import {FlatList, View, ActivityIndicator} from 'react-native';
-import {inject, observer} from 'mobx-react/native';
-import {SearchBar} from 'react-native-elements';
+import {ScrollView, StyleSheet, Image, Text, View, TouchableOpacity, Dimensions} from 'react-native';
+import Markdown, {PluginContainer} from 'react-native-markdown-renderer';
+import SettingsList, {Header, Item} from 'react-native-settings-list';
+import openMap from 'react-native-open-maps';
 
 import styles from '../styles';
-import Constants from '../utils/Constants';
 import MemeleeViewController from './MemeleeViewController';
-import TournamentRow from './components/TournamentRow';
 
-const keyExtractor = (item, index) => item.id;
-
-export default class AttendeesListViewController extends MemeleeViewController {
-    renderItem = ({item}) => (<View />)
-
+export default class LocationViewController extends MemeleeViewController {
     render() {
-        const props = {
-            data: this.props.data,
-            keyExtractor: keyExtractor,
-            renderItem: this.renderItem
+        const addy = '\n' + this.props.data.venue.name + '\n' + this.props.data.venue.address + ' ' + this.props.data.venue.city + 
+            ' ' + this.props.data.venue.state + ' ' + this.props.data.venue.postalCode + '\n' + this.props.data.venue.country + '\n';
+        
+        const s = StyleSheet.flatten(styles.tournamentDetailsEventWrapper);
+        const ss = {
+            itemWidth: 50,
+            backgroundColor: s.backgroundColor,
+            style: styles.tournamentDetailsEventWrapper,
+            titleStyle: styles.tournamentDetailsEventItem
         };
 
-        return <FlatList {...props} renderItem={this.renderItem} />
+        return (<ScrollView>
+            <SettingsList style={styles.tournamentEventsWrapper} borderWidth={s.borderBottomWidth} borderColor={s.borderBottomColor}>
+                <Item {...ss} title={addy} onPress={() => openMap({latitude: this.props.data.map.lat, longitude: this.props.data.map.lng})} />
+            </SettingsList>
+
+            {this.props.data.gettingThere ? <View style={styles.tournamentDetailsTextWrapper}>
+                <Markdown style={styles.tournamentDetailsText}>
+                    {this.props.data.gettingThere}
+                </Markdown>
+            </View> : null}
+        </ScrollView>);
     }
 }
