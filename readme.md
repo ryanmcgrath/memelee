@@ -6,6 +6,15 @@ Ultimately, this repo represents a product I chose not to move forward with furt
 - Smash.gg's API is technically unofficial, and has no guarantees of not breaking. There were a few points in development where this happened. Can't really launch a product that might arbitrarily break. I could go the route of having a server in the middle that acts as a cache or something, but that's a lot of work for something that will (hopefully) be superseded by an official app someday.
 - Being that the Smash.gg API is pretty unofficial, it's also not particularly well documented. This isn't their fault or anything, as they're pretty clear about this fact, so it's not meant as a dig at them! I just know I spent a few afternoons piecing together how the various API calls work together (e.g, fetching featured tournaments, searching, brackets/phases/etc).
 
+### What the hell is a Memelee?
+My little brother and I play Melee a lot, by which I mean... I've been playing the game since it came out, this kid's been playing for a year, and he nowadays beats my ass every time.  Memelee (meme, pronounced may-m for some reason, lay) is a name we jokingly call our netplay sets since they usually turn into contests of who can do the dumbest combos to the other.
+
+|   |   |
+| - | - |
+| Melee is probably one of the most expressive and difficult to master games ever (accidentally) created, and I dunno if I've ever seen a kid improve as fast as he has. Attending Smashcon two years ago with him (as spectators) was a big highlight - at the right is a photo of him meeting Wobbles. | <img src="https://rymc.io/smashgg/jakepg.jpg" width="250"> |
+
+He was sadly diagnosed with Leukemia over the past few months, and I started building this around that same time as a small project with him. If you like what you see here, or you get some use out of it, or if you're just feeling overall generous, I'd encourage you to donate to a fund of your choice for cancer patients. If you're an esports org that wants to send him some swag or something, hit me up and I'm happy to help orchestrate it.
+
 ### What's Included in Here?
 Good question! This repo has the following stuff pretty much working:
 
