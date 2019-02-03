@@ -34,6 +34,7 @@
 		2E4041E2207404C8002D51FF /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4041E1207404BA002D51FF /* libRNVectorIcons.a */; };
 		2E6309DD206B062D001ED724 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6309DC206B0612001ED724 /* libReactNativeNavigation.a */; };
 		2E6309E7206C7210001ED724 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6309E4206C71DF001ED724 /* libRNSVG.a */; };
+		2E85D6BC22077815004164CB /* libfishhook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6841FA4F8DC00B85C8A /* libfishhook.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -389,6 +390,7 @@
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				2E85D6BC22077815004164CB /* libfishhook.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
