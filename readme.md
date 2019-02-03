@@ -18,7 +18,7 @@ He was sadly diagnosed with Leukemia over the past few months, and I started bui
 ### Screenshots
 <img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/x.png?raw=true" width="100"> <img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xx.jpg?raw=true" width="100">
 <img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xxx.jpg?raw=true" width="100"> <img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xxxx.png?raw=true" width="100">
-<img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xxxx.jpg?raw=true" width="100"> <img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xxxxxx.png?raw=true" width="100">
+<img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xxxxx.jpg?raw=true" width="100"> <img src="https://github.com/ryanmcgrath/memelee/blob/master/screenshots/xxxxxx.png?raw=true" width="100">
 
 ### What's Included in Here?
 Good question! This repo has the following stuff pretty much working:
